@@ -1,4 +1,7 @@
 import { MongoClient } from "mongodb"
+import dotenv from "dotenv"
+
+dotenv.config()
 
 const mongoClient = new MongoClient(process.env.DATABASE_URL)
 let db;
@@ -9,3 +12,6 @@ try {
 } catch (error) {
     console.log('Deu erro no server')
 }
+
+export const userCollection = db.collection("user")
+export const sessionCollection = db.collection("session")
