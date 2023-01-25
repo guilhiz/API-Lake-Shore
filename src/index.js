@@ -7,7 +7,7 @@ server.use(express.json());
 
 const PORT = 5000;
 
-server.use([productRouter])
+server.use([productRouter]);
 
 server.listen(PORT, () => {
     console.log("Servidor operando na porta " + PORT);
