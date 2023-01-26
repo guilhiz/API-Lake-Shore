@@ -1,9 +1,9 @@
-import { userCollection } from "../config/database"
+import { usersCollection } from "../config/database.js"
 import bcrypt from 'bcrypt'
 
 export const signIn = async (req, res) => {
     const { email, password } = req.body
-    const user = await userCollection.findOne({email})
+    const user = await usersCollection.findOne({email})
     if (!user){
         return res.status(401).send("Usuario não cadastrado!")
     }
