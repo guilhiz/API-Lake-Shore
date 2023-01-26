@@ -1,3 +1,6 @@
-import Joi from ""
+import Joi from "joi"
 
-export const signIn = Joi
+export const signInSchema = Joi.object({
+    email: Joi.email().required(),
+    password: Joi.string().required()
+})
