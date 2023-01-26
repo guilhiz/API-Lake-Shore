@@ -1,6 +1,6 @@
 import express from "express"
-import { signIn } from "../controller/auth"
-import { signInValidate } from "../middleware/auth"
+import { signIn } from "../controller/auth.js"
+import { signInValidate } from "../middleware/auth.js"
 
 const authRoute = express.Router()
 

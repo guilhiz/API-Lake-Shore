@@ -1,4 +1,4 @@
-import { signInSchema } from "../schema/auth"
+import { signInSchema } from "../schema/auth.js"
 
 export const signInValidate = (req, res, next) => {
     const { email, password } = req.body
