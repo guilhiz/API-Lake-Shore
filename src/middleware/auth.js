@@ -5,7 +5,7 @@ export const signInValidate = (req, res, next) => {
     const validation = signInSchema.validate({email, password})
     if (validation.error){
         const errors = validation.error.details.map((e) => e.message)
-        res.status(422).send(errors)
+        return res.status(422).send(errors)
     }
     next()
 }
