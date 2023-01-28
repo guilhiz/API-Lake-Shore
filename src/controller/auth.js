@@ -14,7 +14,7 @@ export const signIn = async (req, res) => {
     } 
     const token = uuid()
     try {
-        await sessionsCollection.insertOne({token, user_id: user._id})
+        await sessionsCollection.insertOne({token, user_id: user._id, date: Date.now()})
         return res.send({token, user_id: user._id})
     } catch (error) {
         return res.status(401).send("Não foi possivel criar a sessão para ti! Tente mais tarde")
