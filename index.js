@@ -1,8 +1,8 @@
 import express from "express"
 import cors from "cors"
 import dotenv from "dotenv"
-import authRoute from '../src/routes/auth.js'
-import productRouter from './routes/ProductsRoutes.js'
+import authRoute from './src/routes/auth.js'
+import productRouter from './src/routes/ProductsRoutes.js'
 dotenv.config()
 const server = express()
 server.use(express.json())
