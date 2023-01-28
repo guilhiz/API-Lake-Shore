@@ -1,4 +1,4 @@
-import { usersCollection } from "../config/database.js"
+import { sessionsCollection, usersCollection } from "../config/database.js"
 import bcrypt from 'bcrypt'
 import {v4 as uuid} from 'uuid'
 
@@ -13,7 +13,12 @@ export const signIn = async (req, res) => {
         return res.status(401).send("Senha está incorreta!")
     } 
     const token = uuid()
-    return res.send({token, user_id: user._id})
+    try {
+        await sessionsCollection.insertOne({token, user_id: user._id, date: Date.now()})
+        return res.send({token, user_id: user._id})
+    } catch (error) {
+        return res.status(401).send("Não foi possivel criar a sessão para ti! Tente mais tarde")
+    }
 
 }
 
