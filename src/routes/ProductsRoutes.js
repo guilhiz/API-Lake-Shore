@@ -3,7 +3,7 @@ import newProduct from "../controller/newProduct.js";
 import getProducts from "../controller/getProducts.js";
 import getCategory from "../controller/getCategory.js";
 import { productValidate} from "../middleware/productValidate.js";
-import { tokenValidate } from "../middleware/tokenValidate.js";
+import { tokenValidate } from "../middleware/tokenValidade.js";
 
 const productRouter = Router();
 productRouter.use(tokenValidate)
