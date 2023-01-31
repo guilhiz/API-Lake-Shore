@@ -16,8 +16,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node ./src/index.js",
-    "dev": "npx nodemon ./src/index.js"
+    "start": "node index.js",
+    "dev": "npx nodemon index.js"
   },
   "repository": {
     "type": "git",

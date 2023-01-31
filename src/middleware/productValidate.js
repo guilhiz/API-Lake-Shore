@@ -13,6 +13,7 @@ export async function productValidate(req, res, next) {
 
   try {
     const user = await sessionsCollection.findOne({ token });
+    console.log(user)
 
     if (!user) return res.status(401).send("Usuário não encontrado");
     res.locals.user = user;
